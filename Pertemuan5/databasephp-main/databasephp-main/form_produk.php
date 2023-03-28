@@ -1,7 +1,23 @@
 <?php 
 require_once 'dbkoneksi.php';
 ?>
-            
+        
+        
+<?php
+if (isset($_GET['idedit']))
+{
+  $idedit = $_GET['idedit'];
+  $sql = "SELECT * FROM produk where id = $idedit";
+
+  $st = $dbh->prepare($sql);
+  $st->execute();
+  $row = $st->fetch();
+}
+else{
+  $row = [];
+}
+?>
+
 <form method="POST" action="proses_produk.php">
   <div class="form-group row">
     <label for="kode" class="col-4 col-form-label">Kode</label> 
@@ -13,7 +29,7 @@ require_once 'dbkoneksi.php';
           </div>
         </div> 
         <input id="kode" name="kode" type="text" class="form-control"
-        value="">
+        value="<?php if (isset($row['kode'])) echo $row['kode'];?>">
       </div>
     </div>
   </div>
@@ -27,7 +43,7 @@ require_once 'dbkoneksi.php';
           </div>
         </div> 
         <input id="nama" name="nama" type="text" class="form-control" 
-        value="">
+        value="<?php if (isset($row['nama'])) echo $row['nama'];?>">
       </div>
     </div>
   </div>
@@ -41,7 +57,7 @@ require_once 'dbkoneksi.php';
           </div>
         </div> 
         <input id="harga_beli" name="harga_beli" 
-        value="" type="text" class="form-control">
+        value="<?php if (isset($row['harga_beli'])) echo $row['harga_beli'];?>" type="text" class="form-control">
       </div>
     </div>
   </div>
@@ -54,7 +70,7 @@ require_once 'dbkoneksi.php';
             <i class="fa fa-arrow-circle-up"></i>
           </div>
         </div> 
-        <input id="stok" name="stok" value=""
+        <input id="stok" name="stok" value="<?php if (isset($row['stok'])) echo $row['stok'];?>"
         type="text" class="form-control">
       </div>
     </div>
@@ -69,7 +85,7 @@ require_once 'dbkoneksi.php';
           </div>
         </div> 
         <input id="min_stok" name="min_stok" 
-        value=""
+        value="<?php if (isset($row['min_stok'])) echo $row['min_stok'];?>"
         type="text" class="form-control">
       </div>
     </div>
@@ -85,7 +101,15 @@ require_once 'dbkoneksi.php';
           <?php 
             foreach($rsjenis as $rowjenis){
          ?>
-            <option value="<?=$rowjenis['id']?>"><?=$rowjenis['nama']?></option>
+            <option 
+              value="<?=$rowjenis['id']?>" 
+              <?php 
+              if(isset($row['jenis_produk_id'])){
+              if ($rowjenis["id"] == $row['jenis_produk_id']) echo "selected";
+              }?> 
+            > 
+              <?=$rowjenis['nama']?>
+            </option>
          <?php
             }
         ?>
@@ -98,9 +122,18 @@ require_once 'dbkoneksi.php';
     </div>
   </div> 
   <div class="form-group row">
-    <div class="offset-4 col-8">
-      <input type="submit" name="proses" type="submit" 
-      class="btn btn-primary" value="Simpan"/>
-    </div>
+    <?php
+    if (isset($idedit)) {
+      $btn = "Update";
+    } else{
+      $btn = "Simpan";
+    }
+    ?>
+
+    <button name="proses" value="<?=$btn?>">
+      <?=$btn?>
+    </button>
+
+    <input type="hidden" name="idedit" value="<?=$idedit?>">
   </div>
 </form>
