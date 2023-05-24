@@ -56,7 +56,7 @@ require_once '../dbkoneksi.php';
             <i class="fa fa-arrow-circle-o-left"></i>
           </div>
         </div> 
-        <input id="harga_beli" name="kota" 
+        <input id="kota" name="kota" 
         value="<?php if(isset($row['kota'])) echo $row['kota']; ?>" type="text" class="form-control">
       </div>
     </div>
