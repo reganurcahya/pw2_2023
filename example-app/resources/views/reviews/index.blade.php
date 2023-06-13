@@ -41,11 +41,11 @@
                 <tbody>
                     @foreach ($reviews as $review)
                         <tr>
-                            <td>{{ $review['no'] }}</td>
-                            <td>{{ $review['film'] }}</td>
-                            <td>{{ $review['user'] }}</td>
-                            <td>{{ $review['review'] }}</td>
-                            <td>{{ $review['rating'] }}</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $review->film->judul}}</td>
+                            <td>{{ $review->user}}</td>
+                            <td>{{ $review->rating}}</td>
+                            <td>{{ $review->review}}</td>
                             <td>
                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
                                 <a href="" class="btn btn-sm btn-danger"

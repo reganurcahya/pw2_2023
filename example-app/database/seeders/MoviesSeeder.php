@@ -14,23 +14,54 @@ class MoviesSeeder extends Seeder
     public function run(): void
     {
         Movie::create([
-            'judul' => 'The Shawnshark Redemption',
-            'poster' => 'image.png',
-            'genre_id' => 1,
-            'negara' => 'USA',
-            'tahun' => 1994,
-            'rating' => 9.8,
+                'no' => 1,
+                'judul' => 'god of war',
+                'poster' => 'image.png',
+                'genre' => 'Drama',
+                'negara' => 'Korea Selatan',
+                'tahun' => 2019,
+                'rating' => 8.6,
         ]);
-
-
+        Movie::create([           
+                'no' => 2,
+                'judul' => 'The God Father',
+                'poster' => 'image.png',
+                'genre' => 'Crime',
+                'negara' => 'USA',
+                'tahun' => 1972,
+                'rating' => 80,
+        
+        ]);
         Movie::create([
-            'judul' => 'The Godfather',
-            'poster' => 'image.png',
-            'genre_id' => 3,
-            'negara' => 'USA',
-            'tahun' => 1994,
-            'rating' => 9.8,
+                'no' => 3,
+                'judul' => 'hitori no shita',
+                'poster' => 'image.png',
+                'genre' => 'Action',
+                'negara' => 'USA',
+                'tahun' => 2008,
+                'rating' => 9.0,
+            
         ]);
+        Movie::create([ 
+                'no' => 4,
+                'judul' => 'Jujutsu Kaisen  0',
+                'poster' => 'image.png',
+                'genre' => 'Anime, Shounen',
+                'negara' => 'Japan',
+                'tahun' => 2021,
+                'rating' => 9.8,
 
+           
+        ]);
+        Movie::create([   
+            'no' => 5,
+            'judul' => 'One Pice',
+            'poster' => 'image.png',
+            'genre' => 'Anime, Shounen, Komedi',
+            'negara' => 'Japan',
+            'tahun' => 2022,
+            'rating' => 9.4,
+
+        ]);
     }
 }

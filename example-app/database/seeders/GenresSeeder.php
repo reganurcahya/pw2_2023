@@ -14,20 +14,18 @@ class GenresSeeder extends Seeder
     public function run(): void
     {
         Genre::create([
-            'nama' => 'Action',
-            'deskripsi' => "Action-packed movies",
+            'nama' => 'Acrion',
+            'deskripsi' => 'Action-packed movies',
         ]);
-
 
         Genre::create([
             'nama' => 'Drama',
-            'deskripsi' => "Emotional and serious themes",
+            'deskripsi' => 'Emotional and serios themes',
         ]);
-        
-        
+
         Genre::create([
             'nama' => 'Horror',
-            'deskripsi' => "Scary movies",
+            'deskripsi' => 'Scrary movies',
         ]);
     }
 }

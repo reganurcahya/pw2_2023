@@ -12,15 +12,23 @@ class Genre extends Model
     protected $genres = [
         [
             'no' => 1,
-            'nama' => 'Action',
+            'nama' => 'Drama',
         ],
         [
             'no' => 2,
-            'nama' => 'Drama'
+            'nama' => 'Crime',
         ],
         [
             'no' => 3,
-            'nama' => 'Horror',
+            'nama' => 'Action',
+        ],
+        [
+            'no' => 4,
+            'nama' => 'Shounen',
+        ],
+        [
+            'no' => 5,
+            'nama' => 'Shounen, Komedi',
         ],
     ];
 

@@ -12,29 +12,44 @@ class User extends Model
     protected $users = [
         [
             'no' => 1,
-            'nama' => 'niko',
-            'username' => 'niko',
+            'nama' => 'Nabil Muqodam',
+            'username' => 'nabil',
             'password' => 1111111,
-            'email' => 'nikoardiansyah@gmail.com',
+            'email' => 'nabilqodam@gmail.com',
             'role' => 'INA',
         ],
         [
             'no' => 2,
-            'nama' => 'Nabil',
-            'username' => 'nabil',
+            'nama' => 'Muhamad Fauzan',
+            'username' => 'fauzan',
             'password' => 11111112,
-            'email' => 'mnabil@gmail.com',
+            'email' => 'muhafauzan@gmail.com',
             'role' => 'INA',
         ],
         [
             'no' => 3,
-            'nama' => 'rega',
+            'nama' => 'Muhamad Rega',
             'username' => 'Rega',
             'password' => 87654321,
-            'email' => 'rega15@gmail.com',
+            'email' => 'rega12@gmail.com',
             'role' => 'INA',
         ],
-        
+        [
+            'no' => 4,
+            'nama' => 'Muhammad Sumbul',
+            'username' => 'Sumbul',
+            'password' => 87654321,
+            'email' => 'muhammadsumbul@gmail.com',
+            'role' => 'INA',
+        ],
+        [
+            'no' => 5,
+            'nama' => 'Monkey D Luffy',
+            'username' => 'Luffy',
+            'password' => 4556789,
+            'email' => 'pirateking@gmail.com',
+            'role' => 'JPN',
+        ],
     ];
 
     public function getAllUsers()
